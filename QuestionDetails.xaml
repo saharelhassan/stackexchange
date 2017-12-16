@@ -1,0 +1,85 @@
+﻿<Window x:Class="StackoverflowQuestions.QuestionDetails"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StackoverflowQuestions"
+        mc:Ignorable="d"
+        Title="Question Details" Height="500" Width="400" Background="#F0F8FF">
+    <Border Padding="10">
+        <StackPanel>
+            <!-- Title -->
+            <TextBlock Text="Title" FontWeight="Bold" />
+            <TextBox x:Name="TitleText" Style="{StaticResource textBoxStyle}" TextWrapping="Wrap"/>
+            
+            <!-- Owner -->
+            <TextBlock Text="Owner" FontWeight="Bold" Margin="0 10 0 0"/>
+            <TextBox x:Name="OwnerText" Style="{StaticResource textBoxStyle}"/>
+            
+            <!-- Link -->
+            <TextBlock Text="Link" FontWeight="Bold" Margin="0 10 0 0" />
+            <TextBlock>
+                <Hyperlink x:Name="LinkHyper" RequestNavigate="Hyperlink_RequestNavigate">
+                    <TextBlock x:Name="LinkText" TextDecorations="Underline" >
+                        
+                    </TextBlock>
+                </Hyperlink>
+            </TextBlock>
+
+            <!-- Creation Date and Last Activity Date -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                
+                <!-- Creation Date -->
+                <StackPanel Grid.Column="0" Margin="0 10 10 0">
+                    <TextBlock Text="Creation Date" FontWeight="Bold" />
+                    <TextBox x:Name="CreationDateText" Style="{StaticResource textBoxStyle}"/>
+                </StackPanel>
+                
+               <!-- Last Activity Date -->
+                <StackPanel Grid.Column="1" Margin="0 10 0 0">
+                    <TextBlock Text="Last Activity Date" FontWeight="Bold"/>
+                    <TextBox x:Name="LastActivityDateText" Style="{StaticResource textBoxStyle}"/>
+                </StackPanel>
+            </Grid>
+            
+            <!-- Tags -->
+            <TextBlock Text="Tags" FontWeight="Bold" Margin="0 10 0 0" />
+            <TextBox x:Name="TagsText" Style="{StaticResource textBoxStyle}"/>
+
+            <!-- score, view_count and answer_count -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- score -->
+                <StackPanel Grid.Column="0" Margin="0 10 10 0">
+                    <TextBlock Text="Score" FontWeight="Bold"/>
+                    <TextBox x:Name="ScoreText" Style="{StaticResource textBoxStyle}"/>
+                </StackPanel>
+
+                <!-- view_count -->
+                <StackPanel Grid.Column="1" Margin="0 10 10 0">
+                    <TextBlock Text="View Count" FontWeight="Bold"/>
+                    <TextBox x:Name="ViewCountText" Style="{StaticResource textBoxStyle}"/>
+                </StackPanel>
+
+                <!-- answer_count -->
+                <StackPanel Grid.Column="2" Margin="0 10 0 0">
+                    <TextBlock Text="Answer Count" FontWeight="Bold"/>
+                    <TextBox x:Name="AnswerCountText" Style="{StaticResource textBoxStyle}"/>
+                </StackPanel>
+            </Grid>
+
+            <!-- is_answered -->
+            <CheckBox x:Name="IsAnsweredCheckBox" Content="Is Answered" Margin="0 10 0 0" IsEnabled="False" FontWeight="Bold"/>
+
+        </StackPanel>
+     </Border>
+</Window>

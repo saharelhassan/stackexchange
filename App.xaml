@@ -1,0 +1,24 @@
+﻿<Application x:Class="StackoverflowQuestions.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:StackoverflowQuestions"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        
+        <!-- DataGrid header style -->
+        <Style x:Key="columnHeaderStyle" TargetType="{x:Type DataGridColumnHeader}">
+            <Setter Property="Height" Value="35" />
+            <Setter Property="Padding" Value="5" />
+            <Setter Property="Background" Value="#4E87D4" />
+            <Setter Property="Foreground" Value="White" />
+        </Style>
+
+        <!-- TextBox style -->
+        <Style x:Key="textBoxStyle" TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="#F0F8FF" />
+            <Setter Property="Padding" Value="2" />
+            <Setter Property="IsReadOnly" Value="True" />
+        </Style>
+        
+    </Application.Resources>
+</Application>

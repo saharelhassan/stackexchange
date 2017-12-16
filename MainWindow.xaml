@@ -1,0 +1,23 @@
+﻿<Window x:Class="StackoverflowQuestions.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StackoverflowQuestions"
+        mc:Ignorable="d"
+        Title="Stackoverflow Questions" Background="White">
+    <Border Padding="10">
+        <StackPanel Margin="0,0,0,0">
+            <DataGrid x:Name="dgQuestions" RowBackground="#F0F8FF" ColumnHeaderStyle="{StaticResource columnHeaderStyle}" AutoGenerateColumns="False" MouseDoubleClick="dgQuestions_MouseDoubleClick" VerticalAlignment="Top" IsReadOnly="True" AreRowDetailsFrozen="True" HorizontalAlignment="Stretch" Height="600" Width="1350">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Title" Binding="{Binding title}" />
+                    <DataGridTextColumn Header="Link" Binding="{Binding link}" />
+                </DataGrid.Columns>
+            </DataGrid>
+            <Grid>
+                <Button x:Name="btnRefresh" Click="btnRefresh_Click" Content="Refresh" HorizontalAlignment="Left" Height="43" Margin="10,10,0,0" VerticalAlignment="Bottom" Width="111" FontWeight="Bold"/>
+            </Grid>
+
+        </StackPanel>
+    </Border>
+</Window>
